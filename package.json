@@ -1,0 +1,22 @@
+{
+  "name": "csci-39548-to-do-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoAuyeung/CSCI-39548-To-Do-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoAuyeung/CSCI-39548-To-Do-App/issues"
+  },
+  "homepage": "https://github.com/LeoAuyeung/CSCI-39548-To-Do-App#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
