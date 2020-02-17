@@ -1,10 +1,10 @@
 const express = require('express')
 const Handlebars = require("handlebars"); // https://www.npmjs.com/package/handlebars
 const exphbs = require('express-handlebars') // https://www.npmjs.com/package/express-handlebars
-var http = require('http')
 var fs = require('fs');
 
 const app = express()
+app.use(express.urlencoded({ extended: false })); // necessary for HTML form submission to express
 const port = 3000
 
 // app.use(express.static('public')); // used to host 'public' folder as static HTML
@@ -32,6 +32,11 @@ app.get('/', async function (req, res) {
             body: html
         });
     })
+});
+
+app.post('/submit', function (req, res) {
+    console.log(req.body.name);
+    res.send('You sent the data "' + req.body.name + '".');
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
