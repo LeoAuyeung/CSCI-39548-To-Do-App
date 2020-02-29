@@ -76,8 +76,6 @@ app.post('/addUser', function (req, res) {
         }
     })
     .then(function (response) {
-        // console.log("Added new user", username);
-        // console.log(response.data); // { id, username }
         res.redirect("/");
     }).catch(function (error){
         console.log(error.response.data);
@@ -96,8 +94,6 @@ app.post('/authUser', function (req, res) {
         }
     })
     .then(function (response) {
-        // console.log("Logged in user", username);
-        // console.log(response.data); // { token }
         const token = response.data.token;
         res.cookie('token', token);
         res.redirect("/home");
@@ -119,7 +115,6 @@ app.get('/home', function (req, res) {
         }
     })
     .then(function (response) {
-        console.log(response.data);
         const allItems = response.data;
         const html = todoListTemplate(allItems);
         res.render('todo-list', {
@@ -152,7 +147,6 @@ app.post('/addToDo', function (req, res) {
         }
     })
     .then(function (response) {
-        console.log(response.data);
         res.redirect("/home");
     })
     .catch(function (error) {
@@ -176,7 +170,6 @@ app.post('/updateToDo', function (req, res) {
         }
     })
     .then(function (response) {
-        console.log(response.data);
         res.redirect("/home");
     })
     .catch(function (error) {
@@ -196,7 +189,6 @@ app.post('/deleteToDo', function (req, res) {
         },
     })
     .then(function (response) {
-        console.log(response.data);
         res.redirect("/home");
     })
     .catch(function (error) {
