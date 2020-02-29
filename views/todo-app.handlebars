@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App - Home</title>
+</head>
+<body>
+    
+    <form action="/addUser" method="post">
+        <label for="name">Register:</label><br>
+        <input type="text" id="name_register" name="name_register" placeholder="Enter a username here">
+        <input type="submit" value="Register">
+    </form>
+
+    <br/>
+    <p>or if you already have an account...</p>
+
+    <form action="/authUser" method="post">
+        <label for="name">Login:</label><br>
+        <input type="text" id="name_login" name="name_login" placeholder="Enter a username here">
+        <input type="submit" value="Login">
+    </form>
+    <br/>
+    {{{body}}}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App - Home</title>
+</head>
+<body>
+    
+    <form action="/logout" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    <br/>
+
+    <form action="/addToDo" method="post">
+        <label for="name">Add a new to-do:</label><br>
+        <input type="text" id="todo_item" name="todo_item" placeholder="Enter an item here">
+        <input type="submit" value="Add">
+    </form>
+    <br/>
+    {{{body}}}
+</body>
+</html>
