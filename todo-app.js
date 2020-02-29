@@ -5,10 +5,10 @@ const fs = require('fs');
 const axios = require('axios'); // https://www.npmjs.com/package/axios
 const cookieParser = require("cookie-parser");
 
-const app = express()
+const app = express();
 app.use(express.urlencoded({ extended: false })); // necessary for HTML form submission to express
 app.use(cookieParser());
-const port = 3000
+const port = 3000;
 
 // app.use(express.static('public')); // used to host 'public' folder as static HTML
 
@@ -198,7 +198,7 @@ app.post('/deleteToDo', function (req, res) {
 });
 
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen((process.env.PORT || port), () => console.log(`App listening on port ${port}!`));
 
 // ============================== Part 1e) Axios functions ==============================
 
