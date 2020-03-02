@@ -98,7 +98,7 @@ app.post('/authUser', function (req, res) {
         res.cookie('token', token);
         res.redirect("/home");
     }).catch(function (error){
-        console.log(error.response.data);
+        console.log("error :", error.response.status);
         res.send("Invalid login. Try again.")
     })
 });
@@ -116,13 +116,15 @@ app.get('/home', function (req, res) {
     })
     .then(function (response) {
         const allItems = response.data;
+        console.log("allItems", allItems);
         const html = todoListTemplate(allItems);
         res.render('todo-list', {
             body: html
         });
     })
     .catch(function (error) {
-        console.log(error.response);
+        console.log("error :", error.response.status);
+        res.render('todo-list');
     })
 });
 
@@ -150,7 +152,7 @@ app.post('/addToDo', function (req, res) {
         res.redirect("/home");
     })
     .catch(function (error) {
-        console.log(error.response);
+        console.log("error :", error.response.status);
         res.send("Invalid action. Try again.");
     })
 });
@@ -173,7 +175,7 @@ app.post('/updateToDo', function (req, res) {
         res.redirect("/home");
     })
     .catch(function (error) {
-        console.log(error.response);
+        console.log("error :", error.response.status);
         res.send("Invalid action. Try again.");
     })
 });
@@ -192,7 +194,7 @@ app.post('/deleteToDo', function (req, res) {
         res.redirect("/home");
     })
     .catch(function (error) {
-        console.log(error.response);
+        console.log("error :", error.response.status);
         res.send("Invalid action. Try again.");
     })
 });
