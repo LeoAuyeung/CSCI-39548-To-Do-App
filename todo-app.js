@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(express.urlencoded({ extended: false })); // necessary for HTML form submission to express
 app.use(cookieParser());
-const port = 3000;
+const port = 3001;
 
 // app.use(express.static('public')); // used to host 'public' folder as static HTML
 
