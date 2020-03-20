@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 const axios = require("axios");
 
 class TodoPage extends Component {
@@ -63,10 +63,10 @@ class TodoPage extends Component {
                 "content": item
             }
         })
-            .then(response => {
-                console.log("adding new todo items...")
-                window.location = "/home"
-            })
+        .then(response => {
+            console.log("adding new todo items...");
+            window.location.reload();
+        })
     }
 
     updateToDo(id) {
@@ -81,10 +81,10 @@ class TodoPage extends Component {
                 "completed": true
             }
         })
-            .then(response => {
-                console.log("UPDATE todo items...");
-                window.location = "/home";
-            })
+        .then(response => {
+            console.log("UPDATE todo items...");
+            window.location.reload();
+        })
     }
 
     deleteToDo(id) {

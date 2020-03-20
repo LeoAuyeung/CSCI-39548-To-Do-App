@@ -10,7 +10,6 @@ class LandingPage extends Component {
             nameLogin: '',
             errorMsg: '',
         }
-        // this.authUser = this.authUser.bind(this);
     }
 
     componentDidMount() {
@@ -41,6 +40,7 @@ class LandingPage extends Component {
         })
         .then(response => {
             console.log("addUser: ", response.data);
+            window.location.reload();
         })
         .catch(error => {
             console.log("Error: ", error.response.data);
@@ -81,9 +81,6 @@ class LandingPage extends Component {
         });
     };
 
-    // plan: 
-    // if no token, render signup/login
-    // if token, render to-do list of token
     render() {
         const { nameLogin, nameRegister, errorMsg } = this.state;
 
